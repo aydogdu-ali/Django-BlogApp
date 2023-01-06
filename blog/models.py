@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class Category(models.Model):
     name = models.CharField(max_length=25, unique=True) #Aynı kategoriden 1 den fazla olamaz.
 
@@ -18,5 +20,5 @@ class Blog(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
+    def __str__(self): # #tabloda ismi gözükmesi için yazdım.
         return self.title
