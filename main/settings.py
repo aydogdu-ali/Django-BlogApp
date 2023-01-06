@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #my apps
+    'blog', #kendi applerimizi ekliyoruz.
+
+    #third party lib
+    'rest_framework', # 3. parti uygulamarı ekliyoruz.
 ]
 
 MIDDLEWARE = [
