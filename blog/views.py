@@ -35,3 +35,14 @@ class BlogView(ModelViewSet): ##crud işlemleri
 
     #eger login ise Crud işlemlerini yapabilir değilse sadece get yapar.
     permission_classes = [IsAuthenticatedOrReadOnly]
+
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.authtoken.models import Token
+
+#kullanıcı çıkış yaptığında token silme
+@api_view(['POST'])
+def logout(request):
+    request.user.auth_token.delete()
+    return Response({"message":"Token Deleted"})

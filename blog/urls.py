@@ -10,7 +10,10 @@ router = routers.DefaultRouter()
 router.register('category', CategoryView)
 router.register('blog', BlogView)
 
+from.views import logout
+
 urlpatterns = [
 
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('logout/', logout)
 ]
